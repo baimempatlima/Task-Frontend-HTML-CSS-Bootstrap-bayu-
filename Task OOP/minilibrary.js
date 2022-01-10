@@ -19,13 +19,15 @@ class Tabel {
         var tagpenutup = "</tbody>";
 
         data.forEach((e)=>{
-            tagpembuka += `
-            <tr>
-                <td>${e[0]}</td>
-                <td>${e[1]}</td>
-                <td>${e[2]}</td>
-            </tr>
-            `;
+                tagpembuka += `
+                <tr>`;
+                    for (var i = 0;  i < e.length; i++) {
+                        tagpembuka += `<td>${e[i]}</td>`;
+                    }
+                 tagpembuka += `
+                </tr>`;
+                     
+           
         });
         return tagpembuka + tagpenutup;
     }
