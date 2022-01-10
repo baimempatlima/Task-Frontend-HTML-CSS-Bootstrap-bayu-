@@ -19,7 +19,7 @@ while (lagi) {
         lagi = confirm('Ulangi');
     }else{
         if (Pemain1 !== Acak && Pemain2 !== Acak) {
-            console.log("Tebakan Pemain 1 dan Pemain 2 Benar");
+            console.log("Tebakan Pemain 1 dan Pemain 2 Tidak Ada yang Benar");
         }else{
             if (Pemain1 == Acak) {
                 console.log("Pemain 1 Benar");
@@ -36,14 +36,24 @@ while (lagi) {
             if (match <= 5) {
                 lagi = confirm('Pertandingan Ke-' + match + '?');
             }else{
-                alert('Pertandingan Berakhir Selamat');
-                match = 1;
-                pemain1skor = 0;
-                pemain2skor = 0;
-                lagi = confirm('Ulangi');
+                if (pemain1skor > pemain2skor ) {
+                  alert("Selamat, Pemain 1 Menang");
+                  // lagi = false;
+                }else if (pemain1skor < pemain2skor){
+                  alert("Selamat, Pemain 1 Menang");
+                  // lagi = false;
+                }else{
+                  alert("Kedua Pemain harus latihan lagi ya");
+                }
+                  alert('Pertandingan Berakhir Selamat');
+                  match = 1;
+                  pemain1skor = 0;
+                  pemain2skor = 0;
+                  lagi = confirm('Ulangi');
+          
             }
         
-          }
+    }
 }
 
 function cek(Pemain1, Pemain2){
