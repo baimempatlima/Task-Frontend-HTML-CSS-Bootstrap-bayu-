@@ -1,4 +1,4 @@
-import {Tabel } from "./module";
+import {Tabel } from "./module.js";
 
 const tabel = new Tabel ({
     judulTabel : ["Nama", "Email", "No.HP"],
