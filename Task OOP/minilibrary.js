@@ -25,8 +25,7 @@ class Tabel {
                         tagpembuka += `<td>${e[i]}</td>`;
                     }
                  tagpembuka += `
-                </tr>`;
-                     
+                </tr>`;          
            
         });
         return tagpembuka + tagpenutup;
