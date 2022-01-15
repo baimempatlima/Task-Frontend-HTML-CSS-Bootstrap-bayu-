@@ -17,14 +17,6 @@ searchButton.addEventListener('click', async function () {
         updateUISearch(newssearch);
 });
 
-document.addEventListener('click', async function (e) {
-    if(e.target.classList.contains('modal-detail-button')){
-        const url = e.target.dataset.url; 
-        const movieDetail = await getMovieDetail(url);
-        updateUIDetail(movieDetail);
-    }
-})
-
 function getNewsSearch(keyword) {
     return fetch('https://newsapi.org/v2/top-headlines?country=id&apiKey=5e1086c210a248fe9f17d8352b0cbe91&q='  + keyword)
         .then(response => response.json())
