@@ -9,13 +9,6 @@ data.then(response =>response.json())
     table.innerHTML = updateUiNews(artikel);
 })
 
-// const searchButton = document.querySelector('.search-button');
-// searchButton.addEventListener('click', async function () {
-//             table.innerHTML = loading();
-//             const inputKeyword = document.querySelector('.input-keyword');
-//             const newssearch = await getNewsSearch(inputKeyword.value);
-//             updateUISearch(newssearch);
-// });
 const inputKeyword = document.querySelector('.input-keyword');
 inputKeyword.addEventListener('keyup', async function () {
             table.innerHTML = loading();
