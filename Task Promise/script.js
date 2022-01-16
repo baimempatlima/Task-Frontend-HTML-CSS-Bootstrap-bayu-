@@ -2,23 +2,28 @@
 const table = document.getElementById('datanews');
 table.innerHTML = loading();
 
-const data = fetch('https://newsapi.org/v2/top-headlines?country=id&apiKey=5e1086c210a248fe9f17d8352b0cbe91');
+const data = fetch('https://newsapi.org/v2/top-headlines?country=id&apiKey=0390cadbda5e4e30831929d19f4e2cc5');
 data.then(response =>response.json())
 .then(response => {
     const artikel = response.articles
     table.innerHTML = updateUiNews(artikel);
 })
 
-const searchButton = document.querySelector('.search-button');
-searchButton.addEventListener('click', async function () {
-        table.innerHTML = loading();
-        const inputKeyword = document.querySelector('.input-keyword');
-        const newssearch = await getNewsSearch(inputKeyword.value);
-        updateUISearch(newssearch);
+// const searchButton = document.querySelector('.search-button');
+// searchButton.addEventListener('click', async function () {
+//             table.innerHTML = loading();
+//             const inputKeyword = document.querySelector('.input-keyword');
+//             const newssearch = await getNewsSearch(inputKeyword.value);
+//             updateUISearch(newssearch);
+// });
+const inputKeyword = document.querySelector('.input-keyword');
+inputKeyword.addEventListener('keyup', async function () {
+            table.innerHTML = loading();
+            const newssearch = await getNewsSearch(inputKeyword.value);
+            updateUISearch(newssearch);
 });
-
 function getNewsSearch(keyword) {
-    return fetch('https://newsapi.org/v2/top-headlines?country=id&apiKey=5e1086c210a248fe9f17d8352b0cbe91&q='  + keyword)
+    return fetch('https://newsapi.org/v2/top-headlines?country=id&apiKey=0390cadbda5e4e30831929d19f4e2cc5&q='  + keyword)
         .then(response => response.json())
         .then(response => response.articles)
 }
